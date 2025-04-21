@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neha Jangra - Web Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+    <style>
+        /* Custom CSS for animations and enhanced responsiveness */
+        #about h2,
+        #services h2,
+        #projects h2,
+        #contact h2 {
+            animation: fadeIn 1s ease, slideInDown 0.5s ease;
+        }
+        #about p,
+        #services .card,
+        #projects .project-card,
+        #contact form {
+            animation: fadeIn 1s ease, slideInLeft 0.5s ease;
+        }
+        .user-img{
+            height: 20px;
+            width: 20px;
+            color: white;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-50px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-50px);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        .nav-link.active {
+            font-weight: 600;
+            border-bottom: 2px solid #6b7280;
+        }
+        .mobile-menu.active {
+            display: flex !important;
+        }
+
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-gray-800" ><img src="./images/N-removebg-preview.png" style="max-width: 200px; height: 60px;"></a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="nav-link text-gray-700 hover:text-blue-600 transition duration-300">Home</a></li>
+                    <li><a href="#about" class="nav-link text-gray-700 hover:text-blue-600 transition duration-300">About</a></li>
+                    <li><a href="#services" class="nav-link text-gray-700 hover:text-blue-600 transition duration-300">Services</a></li>
+                    <li><a href="#projects" class="nav-link text-gray-700 hover:text-blue-600 transition duration-300">Projects</a></li>
+                    <li><a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 transition duration-300">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="hamburger-btn" class="md:hidden text-gray-700 focus:outline-none" aria-label="Toggle Navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-20">
+        <div class="bg-white w-80 h-full absolute right-0 p-6">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-btn" class="text-gray-700 focus:outline-none" aria-label="Close Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="block">
+                <ul class="space-y-4">
+                    <li><a href="#home" class="mobile-nav-link block text-lg text-gray-700 hover:text-blue-600 transition duration-300">Home</a></li>
+                    <li><a href="#about" class="mobile-nav-link block text-lg text-gray-700 hover:text-blue-600 transition duration-300">About</a></li>
+                    <li><a href="#services" class="mobile-nav-link block text-lg text-gray-700 hover:text-blue-600 transition duration-300">Services</a></li>
+                    <li><a href="#projects" class="mobile-nav-link block text-lg text-gray-700 hover:text-blue-600 transition duration-300">Projects</a></li>
+                    <li><a href="#contact" class="mobile-nav-link block text-lg text-gray-700 hover:text-blue-600 transition duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section id="home" class="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center justify-center gap-8">
+        <div class="md:w-1/2 text-center md:text-left">
+            <h1 class="text-6xl font-bold text-blue-700 mb-4">Hi, I'm Neha Jangra</h1>
+            <p class="text-lg text-gray-600 mb-6">"As a web developer, I'm committed to providing high-quality web solutions tailored to your specific needs. From front-end design to back-end development, I offer a full range of services to help you succeed online."</p>
+            <p class="text-lg text-gray-600 mb-6">"With a passion for innovation and a commitment to excellence, I specialize in developing dynamic and interactive websites. I work closely with clients to understand their goals and deliver results that drive growth and engagement."</p>
+            <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition duration-300">View My Work</a>
+        </div>
+        <div class="md:w-1/2">
+            <img src="./images/a-mockup-of-a-software-developer-or-web-_DBetWItuSsSpZXiVEJAQhw_d7lv6_uNQeGcxHwNDNhJiA.jpeg"  alt="Neha Jangra" class="rounded-full shadow-lg">
+            
+        </div>
+    </section>
+
+    <section id="about" class="bg-gray-100 py-20">
+        <div class="container mx-auto px-4 text-center md:text-left">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-8">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="./images/Innovation-pana.png" alt="About Neha Jangra" class="rounded-lg shadow-md"  style="max-width: 100%; height: 500px;">
+                   
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-lg text-gray-600">
+                        Hello! My name is Neha Jangra, and I'm a web developer with a passion for creating engaging and user-friendly websites. I have experience in designing, developing, and deploying web applications using various technologies. I strive to deliver high-quality work that meets your needs and exceeds your expectations. <br>
+                    </p>
+                    <p class="text-lg text-gray-600 mt-6">My toolkit includes a strong foundation in front-end technologies like HTML, CSS, JavaScript, and Bootstrap, allowing me to craft engaging and responsive user interfaces. I also have experience working with databases using SQL and building dynamic applications with React. Beyond the web, I've explored the fundamentals of programming with C++. I'm continuously learning and excited to contribute my skills to innovative projects.</p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-8">My Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-4">Web Design</h3>
+                    <p class="text-gray-600">I create visually appealing and user-friendly website designs tailored to your brand.</p>
+                </div>
+                <div class="card bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-4">Web Development</h3>
+                    <p class="text-gray-600">I develop robust and scalable web applications using the latest technologies.</p>
+                </div>
+                <div class="card bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-4">Responsive Design</h3>
+                    <p class="text-gray-600">I ensure your website looks great and functions perfectly on all devices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+      
+   </sectiion>
+
+    <section id="projects" class="bg-gray-100 py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-8">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                    <img src="./images/jmdcehmicals.png" alt="Project 1" class="rounded-md mb-4">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">JMD Chemicals</h3>
+                    <p class="text-gray-600 mb-4">Developed a comprehensive website for a detergent company to showcase their product range and brand values. The site features detailed product information, highlighting key benefits and usage instructions. Implemented a user-friendly design to ensure easy navigation.</p>
+                    <a href="https://www.jmdchemicals.com/" class="text-blue-500 hover:text-blue-700 hover:underline">View Project</a>
+                </div>
+                <div class="project-card bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                    <img src="./images/taraco.png" alt="Project 2" class="rounded-md mb-4">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">TARA co.</h3>
+                    <p class="text-gray-600 mb-4">Designed and developed a professional portfolio website for Taraco, a chartered accountant. The site serves as a digital presence to showcase their expertise, services offered, and professional background to potential clients and collaborators.</p>
+                    <a href="https://taracoswn.com/" class="text-blue-500 hover:text-blue-700 hover:underline">View Project</a>
+                </div>
+                <div class="project-card bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                    <img src="./images/studentWallet.png" alt="Project 3" class="rounded-md mb-4">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">StudentWallet</h3>
+                    <p class="text-gray-600 mb-4">Developed "StudentWallet," a user-friendly web application designed to streamline fee payments for college students. The platform enables students to conveniently pay their fees online and easily download payment receipts, simplifying the administrative process.</p>
+                    <a href="https://studentwallet.netlify.app/" class="text-blue-500 hover:text-blue-700 hover:underline">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <div class="skills-wrapper">
+        <div class="skills-inner" style="--quantity: 10;">
+            <div class="skills-card" style="--index: 0;--color-card: 142, 249, 252;">
+                <div class="skills-img">HTML</div>
+            </div>
+            <div class="skills-card" style="--index: 1;--color-card: 142, 252, 204;">
+                <div class="skills-img">CSS</div>
+            </div>
+            <div class="skills-card" style="--index: 2;--color-card: 142, 252, 157;">
+                <div class="skills-img">JS</div>
+            </div>
+            <div class="skills-card" style="--index: 3;--color-card: 215, 252, 142;">
+                <div class="skills-img">React</div>
+            </div>
+            <div class="skills-card" style="--index: 4;--color-card: 252, 252, 142;">
+                <div class="skills-img">Bootstrap</div>
+            </div>
+            <div class="skills-card" style="--index: 5;--color-card: 252, 208, 142;">
+                <div class="skills-img">SQL</div>
+            </div>
+            <div class="skills-card" style="--index: 6;--color-card: 252, 142, 142;">
+                <div class="skills-img">C++</div>
+            </div>
+            <div class="skills-card" style="--index: 7;--color-card: 252, 142, 239;">
+                <div class="skills-img">Node.js</div>
+            </div>
+            <div class="skills-card" style="--index: 8;--color-card: 204, 142, 252;">
+                <div class="skills-img">Tailwind</div>
+            </div>
+            <div class="skills-card" style="--index: 9;--color-card: 142, 202, 252;">
+                <div class="skills-img">Git</div>
+            </div>
+        </div>
+    </div> -->
+
+</section>
+
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-8">Contact Me</h2>
+            <div class="flex justify-center">
+                <div class="w-full md:w-1/2">
+                    <form class="bg-white rounded-lg shadow-md p-8 space-y-6"  action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="e6e81861-823d-4476-bf1b-3097f8f97f72">
+                        <div>
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                            <textarea id="message" name="message" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Message" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition duration-300 w-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div class="col-span-1 md:col-span-1">
+                    <a href="#" class="text-lg font-bold">
+                        <img src="./images/N__2_-removebg-preview.png" alt="Neha Jangra Logo" class="h-8 inline-block mr-2"  style="max-width: 200px; height: 100px;">
+                    </a>
+                </div>
+    
+                <div class="col-span-1 md:col-span-1">
+                    <h6 class="text-sm font-semibold text-gray-300 uppercase mb-4">Services</h6>
+                    <ul class="list-none">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors duration-300">Web Design</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors duration-300">Web Development</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors duration-300">Frontend Development</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors duration-300">Responsive Design</a></li>
+                        </ul>
+                </div>
+    
+                <div class="col-span-1 md:col-span-1">
+                    <h6 class="text-sm font-semibold text-gray-300 uppercase mb-4">Quick Links</h6>
+                    <ul class="list-none">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300">About</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors duration-300">Services</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-300">Projeccts</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+    
+                <div class="col-span-1 md:col-span-2 lg:col-span-2">
+                    <h6 class="text-sm font-semibold text-gray-300 uppercase mb-4">Connect</h6>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/i_neha_jangra/">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24" fill="white" >
+                                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/Nehajangra">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current">
+                                <path d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nehajangra/">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" fill="white">
+                                <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                        </div>
+                </div>
+               
+            <hr class="my-6 border-gray-700">
+            <p class="text-center text-sm text-gray-400">© 2024 Neha Jangra. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
